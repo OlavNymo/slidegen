@@ -19,7 +19,7 @@ def test_conversion():
         return False
     
     # Test with the provided PDF (first 10 pages only)
-    pdf_path = "Paper Presentation PCA-Semireg VaR and ES models.pdf"
+    pdf_path = "Paper_Presentation_PCA-Semireg_VaR_and_ES_models.pdf"
     
     if not os.path.exists(pdf_path):
         print(f"Error: PDF file not found: {pdf_path}")

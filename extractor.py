@@ -4,6 +4,7 @@ Uses pymupdf4llm to extract all content from PDF including text, hierarchies, im
 """
 
 import pymupdf4llm
+import fitz  # PyMuPDF
 from typing import Dict, List, Any, Optional
 import json
 import os
@@ -46,7 +47,7 @@ def extract_pdf_content(pdf_path: str, max_pages: Optional[int] = None) -> Dict[
             
             for img_index, img in enumerate(image_list):
                 xref = img[0]
-                pix = pymupdf4llm.pymupdf.Pixmap(doc, xref)
+                pix = fitz.Pixmap(doc, xref)
                 
                 # Filter out small images and header/footer images
                 if should_extract_image(pix, page_num, img_index):

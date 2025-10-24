@@ -66,7 +66,7 @@ def create_complete_latex_document(latex_body: str) -> str:
 """
     
     # Combine preamble with body and closing
-    complete_document = preamble + latex_body + "\n\\end{document}"
+    complete_document = preamble + "\\maketitle\n\n" + latex_body + "\n\\end{document}"
     
     return complete_document
 
